@@ -19,7 +19,7 @@ namespace TradeBot_Binance
         
         private static BinanceClient _binanceClient = new BinanceClient(new ApiClient(_apiKey, _apiSecret));
 
-        private static void Main(string[] args) // apiKey, apiSecret, discordWebHookUrl, optional relativeСryptocurrency
+        private static void Main(string[] args) // apiKey, apiSecret, discordWebHookUrl, optional relativeCryptocurrency
         {
             if (args.Length < 3) return;
             
@@ -73,7 +73,7 @@ namespace TradeBot_Binance
                             Console.ForegroundColor = ConsoleColor.Green;
                             Console.WriteLine(DateTime.Now.ToLongTimeString() + " " + t.Symbol.Insert(t.Symbol.LastIndexOf('U'), "/") + " = " + t.Price + "%");
                             Console.ResetColor();
-                            SendDiscordWebhook($@"```{DateTime.Now.ToLongTimeString()} Сильный рост!!! {t.Symbol.Insert(t.Symbol.LastIndexOf('U'), "/")} = {t.Price}%``` https://www.binance.com/ru/trade/{t.Symbol.Insert(t.Symbol.LastIndexOf('U'), "_")}?layout=pro");
+                            SendDiscordWebhook($@"```{DateTime.Now.ToLongTimeString()} Fast growth!!! {t.Symbol.Insert(t.Symbol.LastIndexOf('U'), "/")} = {t.Price}%``` https://www.binance.com/ru/trade/{t.Symbol.Insert(t.Symbol.LastIndexOf('U'), "_")}?layout=pro");
                         }
                         else if (t.Price > 3.0M)
                         {
