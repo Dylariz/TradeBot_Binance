@@ -8,7 +8,7 @@ using System.Linq;
 using System.Net;
 using System.Threading;
 
-namespace TradeProject
+namespace TradeBot_Binance
 {
     internal static class Program
     {
@@ -84,7 +84,7 @@ namespace TradeProject
                     loop = 0;
                     symbolList = new List<ArrayList>();
                 }
-
+                
                 Thread.Sleep(20000);
                 oldPriceList = pricesList;
             }
